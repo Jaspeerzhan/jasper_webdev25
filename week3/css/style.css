@@ -84,7 +84,7 @@
         aside {
             position: absolute;
             top: 0;
-            right: 0; /* 直接贴到页面右侧 */
+            right: 0; 
             width: 30%;
             height: 100%;
             background-color: #f9f9f9;
