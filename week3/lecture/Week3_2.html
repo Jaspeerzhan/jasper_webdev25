@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Positioning</title>
+    <style type="text/css">
+        .abs_br {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            position:absolute;
+            bottom: 0;
+            right: 20px;
+            /* position absoulutele element withouout position parents will position the themselves  on the browser*/
+        }
+
+        .rel_tl{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            position:relative;
+            top: 50%;
+            left: 50%;
+            /* relative position elements without a positioned parent will position themselves relatively based on where they were supposed be.
+        */
+        }
+
+        .abs_brChild{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 40px;
+            left: 300px;
+        }
+
+        .di{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .cover{
+            position:fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="abs_br"> 
+    </div>
+    <!-- When you position a parent element, any absolute element will position relative to the parent -->
+    <div class="rel_tl"> </div>
+    <div class="abs_brChild">
+
+    </div>
+    <div class="di"></div>
+    <div class="cover"></div>
+
+  </body>
+</html>

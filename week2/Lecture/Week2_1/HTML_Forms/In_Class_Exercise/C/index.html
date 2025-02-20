@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Form Elements</h1>
+
+    <!-- Form using basic input types -->
+    <!-- For more on form elements see w3 school tutorials https://www.w3schools.com/html/html_form_elements.asp -->
+    <p>
+      The form action usually contains a file or link to process the form fields
+      once a user clicks submit.
+    </p>
+    <p>
+      For now, the main form attribute to worry about is the method.
+      <a
+        href="https://www.w3schools.com/tags/att_form_method.asp"
+        target="_blank"
+        >See w3 schools docs.</a
+      >
+    </p>
+    <!-- Here is a commented out opening form tag with some example attributes, x
+     we are not using this one for todays demo since we do not have any scripts or Dbs to post to -->
+    <!-- <form
+      name="user_create"
+      method="GET"
+      action="create_profile.js"
+      target="_self"
+    > -->
+    <form name="user_create">
+      <!-- fieldsets are for grouping input elements, they are labeled by the legend tag within it -->
+      <fieldset>
+        <legend>Simple Text Input</legend>
+        <p>
+          This is your most basic text input. We change input types bu changing
+          the value of the type attribute.
+        </p>
+        <!-- label for attribute should match input name attribute -->
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name" disabled />
+        <br />
+        <br />
+        <label for="last_name">Last Name:</label>
+        <input
+          type="text"
+          name="last_name"
+          maxlength="10"
+          placeholder="Smith"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Text Area</legend>
+        <label for="why_class">Why did you take this class?</label>
+        <textarea name="why_class" cols="50" rows="5" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Common Input Types</legend>
+        <label for="cost">Number:</label>
+        <input
+          name="cost"
+          type="number"
+          min="10"
+          max="100"
+          step=".01"
+          required
+        />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <label for="favorite_color">Whats your favorite color?</label>
+        <input type="color" name="favorite_color" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Check Boxes</legend>
+        <p>
+          Check Boxes all the user to select more than one option at once. All
+          grouped checkbox inputs share the
+          <em>same name but different values.</em>
+        </p>
+        <p>What pets do you have?</p>
+        <input type="checkbox" name="pet" value="dog" /><label>Dog</label>
+        <input type="checkbox" name="pet" value="cat" /><label>Cat</label>
+        <input type="checkbox" name="pet" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="checkbox" name="pet" value="lizard" /><label>Lizard</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Radio Fields</legend>
+        <p>
+          Radio fields allow the user to select only one option at a time.All
+          grouped radio inputs share the
+          <em>same name but different values.</em>
+        </p>
+        <p>Which pet is your favorite?</p>
+        <input type="radio" name="favorite_pet" value="dog" /><label>Dog</label>
+        <input type="radio" name="favorite_pet" value="cat" /><label>Cat</label>
+        <input type="radio" name="favorite_pet" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="radio" name="favorite_pet" value="lizard" /><label
+          >Lizard</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Pick a State</label>
+        <select name="state">
+          <option value="NY">New York</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NM">New Mexico</option>
+        </select>
+      </fieldset>
+      <input type="button" value="Submit" name="submit_profile_d" disabled />
+      <button
+        title="This is a disabled submit button using the button tag"
+        name="submit_profile"
+      >
+        Create Profile
+      </button>
+    </form>
+  </body>
+</html>

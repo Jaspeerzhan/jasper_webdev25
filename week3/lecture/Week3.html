@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Internal style sheet -->
+    <title>Document</title>
+    <style type="text/CSS">
+
+        * {
+            /* Universal selector */
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            /* default font can be set*/
+            font-family: Helvetica,Arial, sans-serif;
+        }
+
+        h1{
+            color: red;
+            /* font-size: 2rem; */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 24px; 
+            margin:2rem 1rem;
+            /* sequence is top right bottom left */
+            /* 2 rem equals 32px for computer and 24px for mobile */
+        }
+
+        /*“垂直外边距合并”（Vertical Margin Collapse）。
+    叠加规则
+    当一个元素的 margin-bottom 和下一个元素的 margin-top 相遇时，它们不会简单相加，而是取 较大的那个值。*/
+        p{
+            font-size: 19px;
+            margin: 0.5rem 0;
+            line-height: 1.5; 
+            /* 1.5 times the font size */
+            border: 2px solid #f00;
+            border-width: 1px 2px 3px 4px;
+            /* border : width style color */
+            border-radius: 5px;
+            /* the raius of boder means the corner of the border, if you wanna circle the border, you can set the radius to 50% */
+        }
+
+        span{
+            color: rgb(100,100,250); /* the first number is red, the second is green, the third is blue, the number indicates the intensity of the color */
+            font-weight: bold;
+            text-transform: uppercase;
+            /* x offset positive to the right, y offset positive to the bottom, blur radius, color */
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        }
+
+        #callToAction{
+            background-color: #f00;
+            color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            font-style: italic;
+        }
+
+        header{
+            background-color: #333;
+            color: #fff;
+        }
+
+        nav ul{
+            /* remove the bullet point */
+            list-style-type: none;
+            /* remove the underline */
+            text-decoration: none;
+            /*用于隐藏超出容器的内容。 */
+            overflow: hidden ;
+            font-size: 0;
+        }
+
+        nav ul li{
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        nav ul li a{
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover{
+            background-color: #555;
+        }
+
+        nav a.active{
+          
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <h1>Nicolas Cage i a SHamanic Thepianl</h1>
+    <p>He makes 8 movies a year </p>
+    <p id="callToAction">LOLLLLL </p>
+    <p>Republicans on the panel who were seen as potential "no" votes began to drop their objections Monday, 
+        with Sen. <span>
+            Susan Collins of Maine saying that Gabbard had addressed her concerns and shared her vision of downsizing the Office of the Director of National Intelligence. Sen. 
+        Todd Young of Indiana announced Tuesday he would back Gabbard after he secured "commitments that will advance our national security." 
+        </span>    </p>
+</body>
+</html>

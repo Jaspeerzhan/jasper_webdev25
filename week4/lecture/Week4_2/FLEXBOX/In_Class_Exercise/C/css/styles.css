@@ -1,0 +1,246 @@
+/* GLOBAL STYLES */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+img{
+  width: 100%;
+  height: auto; 
+  /* // this will make the image responsive,the height will adjust to the width */
+}
+
+/* FleBox Simple Row Layouts */
+
+
+/*Base Styles */
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* //wrap will wrap the children to the next line if they don't fit in the container */
+  /* some styles wo we can see our container:; */
+  bottom: 1px solid purple;
+  background-color: rgba(255,0, 255, 0.3);
+  min-height: 400px;
+}
+/* Atmoic style */
+
+.item{
+  border: 1p solid cornflowerblue;
+  background-color: rgba(0, 0, 255, 0.3);
+  width: 23%;
+  height: 300px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* // this will center the children horizontally and vertically */
+}
+
+/*Atomic Style */
+.wrap-reverse{
+  /*wrap	允许换行，新的一行从下往上堆叠。
+wrap-reverse	允许换行，新的一行从上往下堆叠*/
+  flex-wrap: wrap-reverse;
+  /* //wrap-reverse will wrap the children to the next line but in reverse order */
+}
+
+.justify-start{
+  justify-content: flex-start;
+  /* flex-start will push the children to the start of the container */
+}
+
+.justify-end{
+  justify-content: flex-end;
+  /* flex-end will push the children to the end of the container */
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+  /*子元素之间的间距相等，但两端没有额外的空隙。
+最左和最右的元素紧贴边界。*/
+}
+
+.justify-around{
+  justify-content: space-around;
+  /*子元素之间的间距相等，但两端的间距只有子元素间距的一半。
+两侧空隙比中间的小，让元素稍微向中间聚拢。/
+}
+
+.justify-even{
+  justify-content: space-evenly;
+  /*子元素之间的间距 和 两端的间距 完全相等。
+每个间隔的大小相同，包括容器两端的空隙。*/
+}
+
+/*align means how things stack vertically */
+.align-start{
+  align-items: flex-start;
+  /* flex-start will push the children to the top of the container */
+}
+
+.align-end{
+  align-items: flex-end;
+  /* flex-end will push the children to the bottom of the container */
+}
+
+.align-center{
+  align-items: center;
+  /* center will center the children vertically */
+}
+
+
+.align-baseline{
+  align-items: baseline;
+  /* baseline will align the children to the baseline of the container */
+}
+
+.align-stretch{
+  align-items: stretch;
+  /* stretch will stretch the children to fill the container */
+}
+
+
+/*它允许单独控制某个子元素在交叉轴（垂直方向）的对齐方式，不会影响其他兄弟元素。*/
+/* align self means how the children will align themselves in the container */
+.self-start{
+  align-self: flex-start;
+  /* flex-start will push the children to the top of the container */
+}
+
+.self-end{
+  align-self: flex-end;
+  /* flex-end will push the children to the bottom of the container */
+}
+
+.self-center{
+  align-self: center;
+  /* center will center the children vertically */
+}
+
+.self-baseline{
+  align-self: baseline;
+  /* baseline will align the children to the baseline of the container */
+}
+
+.self-stretch{
+  align-self: stretch;
+  /* stretch will stretch the children to fill the container */
+  /* we need to ditch the assingned pixel height */
+  height: auto;
+}
+
+/* @@Media queries are for applying different styles for different screen sizes */ 
+
+@media screen and (max-width: 768px){
+  /* /if the screen is 768px or smaller, the styles in this media query will be applied/ */
+  body{
+    background-color: lightblue;
+  };
+  .item{
+    align-items: center;
+  }
+  .container{
+    flex-direction: column;
+    /* // this will stack the children vertically */
+  }
+
+  .self-stretch{
+    height: 300px;
+    width: auto;
+  }
+
+  
+}
+
+
+header{
+  display: flex;
+  width: 100%;
+  background-color: aqua;
+  min-height: 100px;
+  line-height: 100px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: darkgray;
+}
+
+.grid-item{
+  width: 23%;
+  margin: 1%;
+}
+
+
+.secondary-nav{
+  min-width: 25%;
+  background-color:aquamarine;
+}
+
+.menu{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu li{
+  border-bottom: 1px solid grey;
+}
+
+.menu a{
+  display: flex;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a:hover{
+  background-color: rgba(0, 0,0, 0.1);
+}
+
+footer{
+  display: flex;
+  width: 100%;
+  background-color: aqua;
+  min-height: 100px;
+  line-height: 100px;
+}
+
+@media screen and (max-width: 1024px){
+  .grid-item{
+    width: 48%;
+  }
+  
+}
+
+@media screen and (max-width: 768px){
+  .wrapper{
+    do
+  }
+  
+}
