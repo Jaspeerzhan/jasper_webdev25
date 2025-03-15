@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Only Modal</title>
+    <style type="text/css">
+      *{
+        box-sizing: border-box;
+      }
+
+      html,body{
+        margin:0;
+      }
+
+    
+      /* anchor tags that looks like buttons */
+      a.button {
+        text-decoration: none;
+        color:white;
+        background-color: blueviolet;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      /* modal window styles */
+      .info_modal{
+        /* stretch the div to cover the entire system */
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color: rgba(0, 0, 0, 0.3);
+        /* make sure that this overlay and its children showup in front og everything else on the page */
+        z-index: 10000;
+        /* starting state of 0 opacity */
+        opacity:0;
+        /* we always apply the transition on the starting state */
+        transition: opacity 400ms ease-in;
+        /* make sure our invisible modal contetns are not clickable */
+        pointer-events: none;
+      }
+
+      .info_modal:target{
+        /* when the modal is targeted, we want to make it visible */
+        opacity:1;
+        pointer-events: auto;
+      }
+
+      .info_modal > div {
+         /* > means direct child */
+        /* center the modal window in the middle of the screen */
+        width: 400px;
+        height: 400px;
+        background-color: whitesmoke;
+        position: relative;
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 20px;
+      }
+
+
+      .close{
+        height: 20px;
+        width: 20px;
+        background-color: whitesmoke;
+        color: black;
+        position: absolute;
+        top: 0;
+        right: 0;
+  
+        text-decoration: none;
+        transition: all 1s ease;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .close:hover{
+        background-color: black;
+        color: white;
+      }
+
+      .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Anchor tag targets another element on the page with a specific id -->
+     <!-- making the links look like buttons with  the class .button -->
+    <a href="#info" class="button">Link to modal 1</a>    
+    <!-- anchor link to modal -->
+
+
+    <!-- parent \/wrapper div which recieve the ID that needs to be targeted -->
+     <!-- Thi div will also be out transparent overlay bg -->
+      <div id="info" class="info_modal center">
+        <!-- this child div is hte modal window iteskef -->
+         <div>
+            <!-- close button/link absolutely positioned -->
+             <a href="#close" class="close">X</a>
+
+             <!-- you put whatever you want inside of your modal window -->
+              <h2>Title of Modal 1</h2>
+              <p>Hey! Look at ME I m modal 1 </p>
+         </div>
+      </div>
+
+
+
+
+
+
+
+  </body>
+</html>

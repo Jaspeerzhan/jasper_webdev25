@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Layout W/ Nav Toggle</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  </head>
+  <script text="text/javascript">
+    //wait for the entire dom content to load
+    //add even listenerfor click enven on hamburger icon
+    //write a funtion to toggle the show class on the nav
+    document.addEventListener("DOMContentLoaded", function(){
+      //then I can add the event listener
+      const hamburger = document.getElementById("hamburger");
+      hamburger.addEventListener("click", function(){
+        const mainNav = document.getElementById("main-nav");
+        mainNav.classList.contains("show") ? mainNav.classList.remove("show") : mainNav.classList.add("show");
+      });
+    });
+  </script>
+  <body>
+    <header>
+      <h1 class="brand"><a href="#">Logo</a></h1>
+      <!-- HTML entity starts with & and end with;
+       they contain character codes for special characters -->
+
+       <!-- it shows on mobile and hide on laptop and it is clickable via J to hide/show your nav -->
+       <span class="mobile-menu" id="hamburger">&#8801;</span>
+       <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+          <li><a href="#">Link4</a></li>
+          <li><a href="#">Link5</a></li>
+          <li><a href="#">Link6</a></li>
+          <li><a href="#">Link7</a></li>
+        </ul>
+       </nav>
+    </header>
+
+    <main class="container">
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+    
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+    
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+      <div class="thumb">
+        <img src="img/rashford.png" alt="Rashford">
+      </div>
+
+    
+
+    
+    </main>
+  </body>
+</html>

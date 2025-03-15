@@ -1,0 +1,142 @@
+
+/* Global styles */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+/*Desktop first design patter*/
+header{
+    
+    display: flex;
+    flex-direction: row;
+    /* the first ele pushed to left and the last one pushed to right */
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.bran{
+    margin: 0;
+    font-weight: 300;
+}
+
+header a{
+    color: #aaa;
+    text-decoration: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li{
+    min-width: 5rem;
+}
+
+.menu li a{
+    display: block;
+    padding: 1rem;
+}
+
+.menu li a:hover{
+    color: #eee;
+    background-color: rgba(0, 0,0, 0.5);
+}
+
+.container{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.thumb{
+    width: 23%;
+}
+
+
+/* if start with laptop, progressively smaller with each media query)*/
+
+/*TABLET*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    body{
+        background-color: red;
+    }
+
+    .thumb{
+        width: 45%;
+    }
+
+    
+}
+
+/*MOBILE*/
+@media screen and (max-width: 767px){
+    body{
+        background-color: blue;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0;
+        
+       
+    }
+    .thumb{
+        width: 100%;
+    }
+    
+    .mobile-menu{
+        color: black;
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+    nav{display: none;}
+    .menu{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu li{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+      
+    }
+
+    /* only add/remove aka toggle by JS */
+    .show{
+        display: block;
+    }
+}

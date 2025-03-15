@@ -1,0 +1,25 @@
+Specificity
+each tag/element、psuedoelement worth 1 point eachs
+each attribute/class/pseudo-class is worth 10 points each
+each id is worth 100 points
+inline style is worth 1000 points
+
+
+#demo p[lang="en"]  , the [] is an attribute selector, lang is an attribute, en is a value
+
+a:hover is worth 11 points, a is worth 1 point, :hover is worth 10 points
+
+
+use generic selectors first,  add specificity as necessary
+rely on specifity rather than order of appearance in the stylesheet
+use the most specific selector possible, but not more specific than necessary
+
+
+psuedoelement is part of the element like first-letter, first-line, before, after has double collon
+write like p::first-line    
+content inserted before or agter the element with the class clear fix
+.clerafix::before {
+    content: " ";
+    display: table;
+}
+psuedoclass is a state of the element like :hover, :active, :focus, :visited  :nth child(even) has single colon
