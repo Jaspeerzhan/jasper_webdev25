@@ -148,8 +148,8 @@ main{
     
     .day {
         flex-direction: column; 
-        text-align: center; /* 让内容居中，优化小屏幕体验 */
-        align-items: center; /* 让图片和文字居中 */
+        text-align: center;
+        align-items: center;
     }
 
     .day:nth-child(odd) {

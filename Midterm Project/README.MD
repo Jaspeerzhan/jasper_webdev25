@@ -1,0 +1,1 @@
+**This is my midterm project, a static website summarizing my travels in 2024.**
