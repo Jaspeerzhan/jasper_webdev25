@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Josefin+Sans:wght@300;400&display=swap');
+
+/*Header and Nav bar*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin:0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    background-color:#FAF9F6 ;
+}
+li{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Handle the nav bar */
+nav{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    background-color: #FAF9F6;
+}
+/* Handle the logo  USE dancing script*/
+.logo {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.logo h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 16px;
+    margin: 0;
+}
+/* handle the nav bar */
+.nav-bar{
+    color: white;
+    width: 100%;
+    border: 1px solid bisque; /* Black with 30% opacity */
+}
+
+
+.nav-bar ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-bar > ul > li{
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    width: 17%;
+}
+
+.nav-bar a{
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+
+}
+
+/* only ensure the grey hover effect on the main menu */
+.nav-bar> ul >li:hover > a {
+    background-color: grey;
+    color: black;
+}
+/* The submenu hidden first,once hover change the display to block */
+.submenu {
+    display: none; /* Hide submenu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f8f5f0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+}
+
+/* Ensure submenu items are also hidden */
+.submenu li {
+    display: none; 
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Show submenu when hovering over dropdown */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    width: 100%;
+    display: block;
+    color: black;
+    text-decoration: none;
+    
+}
+/* The dropdown menu is big region it ensures the submenu is visible  when we scroll the submenu*/
+.dropdown:hover .submenu li {
+    display: block;
+    color: black;
+}
+
+.submenu li:hover a {
+    background-color: #e9ecef;
+    color: black;
+}
+
+
+
+
+
+/*Footer*/
+
+.footer-content {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    height: 100px;
+}
+
+
+footer p {
+    margin: 10px 0;
+}
+
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: blue;
+}
+
+
+/* mobile phone with max width 768px */
+@media screen and (max-width: 768px) {
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav a{
+        font-size: 0.7rem;
+    }
+
+}
+
+
