@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo</title>
+    <!-- boostrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<script>
+    let loc;
+    document.addEventListener("DOMContentLoaded", function() {
+        //this function will be called when the DOM is loaded
+        //we call the getGeoLocation function to get the location of the user
+        loc = document.getElementById("location");
+        getGeoLocation();
+    });
+    const getGeoLocation =()=>{
+        if(navigator.geolocation && navigator.geolocation.getCurrentPosition){
+            //we check if the browser supports geolocation and if it does, we call the getCurrentPosition method
+            //first parameter is a function that will be called if the geolocation is successful
+            //second parameter is a function that will be called if the geolocation fails
+            navigator.geolocation.getCurrentPosition(setLocation, showError);
+        }
+        else{
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    const setLocation = (position) => {
+        //this function will be called if the geolocation is successful
+        const lat = position.coords.latitude;
+        const long = position.coords.longitude;
+        loc.innerHTML = `Latitude: ${lat} Longitude: ${long}`;
+        //we set the innerHTML of the location element to the latitude and longitude of the user
+    }
+
+    const showError = (error) => {
+        //this function will be called if the geolocation fails
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                loc.innerHTML = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                loc.innerHTML = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                loc.innerHTML = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                loc.innerHTML = "An unknown error occurred."
+                break;
+        }
+    }
+
+</script>
+<body>
+    <h1>Geolocation</h1>
+    <p id="location">Location will be displayed here.</p>
+    <h1>Hello,<</h1>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="firstName" placeholder="Jane">
+        <label for="firstName">Enter Your First Name</label>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
