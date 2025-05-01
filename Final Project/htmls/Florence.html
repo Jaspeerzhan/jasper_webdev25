@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/florence.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script defer src="../js/common.js"></script>
+
+</head>
+<body data-city="florence">
+    <!-- The menu with the drop down menu -->
+    <nav>
+        <div class="logo">
+            <a href="./index.html">
+                <h1>Jasper <span class="icon">🌍</span></h1>
+                <p>around the world in 2024</p>
+            </a>
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">USA</a>
+                    <ul class="submenu">
+                        <li><a href="./Hawaii.html">Hawaii</a></li>
+                        <li><a href="./HawaiiGallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                  
+                <li class="dropdown">
+                    <a href="#">Italy</a>
+                    <ul class="submenu">
+                        <li><a href="./Rome.html">Rome</a></li>
+                        <li><a href="./Florence.html">Florence</a></li>
+                        <li><a href="./Dolomite.html">Dolomites</a></li>
+                        <li><a href="./Italygallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Soccer</a>
+                    <ul class="submenu">
+                        <li><a href="./RedDerby.html">Red Derby</a></li>
+                        <li><a href="./RomeDerby.html">Rome Derby</a></li>
+                    </ul>
+                </li>                
+                <li><a href="./Me.html">ME</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="city-header">
+            <h1>Florence</h1>
+            <div id="weather-info" style="font-size: 1.1rem; margin-top: 1rem;"></div>
+        </section>
+    
+       <!-- My itinerary for Florence, Italy. -->
+        <section class="itinerary">
+            <div class="day">
+                <h3>Day 1</h3>
+                <p>In the morning, I took a train from <strong>Florence Santa Maria Novella Station</strong> to <strong>Pisa</strong> to visit the iconic <strong>Leaning Tower of Pisa</strong>. After exploring the area and taking some classic Pisa photos, I returned to <strong>Florence</strong> by train in the afternoon. Once back in the city, I visited the historic <strong>Ponte Vecchio (Old Bridge)</strong>, admiring its unique architecture and the beautiful view over the <strong>Arno River</strong>.</p>
+                <img src="../img/Florence/Day1.jpg" alt="Day 1 Image">
+            </div>
+            
+            <div class="day">
+                <h3>Day 2</h3>
+                <p>On the second day, I visited the magnificent <strong>Florence Cathedral (Cattedrale di Santa Maria del Fiore)</strong>, admiring its stunning dome designed by <strong>Brunelleschi</strong>. After that, I climbed the <strong>Giotto’s Bell Tower</strong>, enjoying breathtaking panoramic views of <strong>Florence</strong>. In the afternoon, I explored the <strong>Galleria dell'Accademia</strong>, where I saw the world-famous statue of <strong>David</strong> by <strong>Michelangelo</strong>.</p>
+                <img src="../img/Florence/Day2.jpg" alt="Day 2 Image">
+            </div>
+            
+        </section>
+    
+        <!-- Food Section -->
+        <section class="food-gallery">
+            <h2>Food</h2>
+            <div class="foods">
+                <img src="../img/Florence/Food1.jpg" alt="Food 1">
+                <img src="../img/Florence/Food2.jpg" alt="Food 2">
+                <img src="../img/Florence/Food4.jpg" alt="Food 3">
+            </div>
+        </section>
+    </main>
+    
+    <button id="toTopBtn" onclick="scrollToTop()" title="Back to Top">⬆</button>
+
+  <footer>
+    <div class="footer-content">
+        <p>© 2024 Jasper's Travels. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+  
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        getWeather("Florence", 43.77, 11.25, "Europe/Rome");
+    });
+</script>
+
+</html>

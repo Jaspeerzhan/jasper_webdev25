@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap');
+
+
+main {
+    margin-top: 130px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f5ede0;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../img/Rome/bgi.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+/* Itinerary Title */
+.city-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.city-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #7a3e2e; /* Roman Brick Red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Itinerary Layout */
+.itinerary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    gap: 30px;
+    text-align: center;
+}
+
+.day p {
+    width: 40%;
+    text-align: left;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #3e2c23;
+}
+
+.day h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3e2c23;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 30px;
+}
+
+
+.day:nth-child(odd) {
+    flex-direction: row-reverse;
+    text-align: center;
+}
+
+.day img {
+    width: 313px;
+    height: 400px; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 15px;
+    width: 40px;
+    height: 40px;
+    background-size: 60% 60%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(1.1);
+  }
+  
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+
+  .vatican-gallery h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(108, 102, 102, 0.1);
+  }
+  
+  
+  #elevator-nav {
+    position: fixed;
+    top: 40%;
+    right: 20px;
+    list-style: none;
+    z-index: 999;
+    padding: 0;
+}
+
+#elevator-nav li {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#elevator-nav li:hover,
+#elevator-nav li.active {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .itinerary {
+        max-width: 100%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .itinerary {
+        max-width: 100%;
+    }
+
+    .day {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .day:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .day p {
+        font-size: 1rem;
+        width: 90%;
+        text-align: center;
+    }
+
+    .day img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+
+    #elevator-nav {
+        display: none;
+      }
+    
+    
+}

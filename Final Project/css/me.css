@@ -1,0 +1,138 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+
+  #mePage {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    
+  }
+  
+  .intro {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .intro h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #7a3e2e;
+    margin-bottom: 20px;
+  }
+  
+  .intro p {
+    font-size: 1.2rem;
+    color: #3e2c23;
+  }
+  
+  /* Travel experiences */
+  .travel-experiences {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .travel-experiences h2 {
+    font-size: 2.5rem;
+    color: #7a3e2e;
+    margin-bottom: 40px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #5a4a42;
+  }
+  
+  /* Hobbies */
+  .hobbies {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .hobbies h2 {
+    font-size: 2.5rem;
+    color: #7a3e2e;
+    margin-bottom: 20px;
+  }
+  
+  .hobbies ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hobbies li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .intro h1 {
+        font-size: 2.2rem;
+      }
+    
+      .intro p {
+        font-size: 1rem;
+      }
+    
+      .travel-experiences h2,
+      .hobbies h2 {
+        font-size: 2rem;
+      }
+    
+      .card {
+        width: 80%; 
+      }
+    
+      .card h3 {
+        font-size: 1.3rem;
+      }
+    
+      .card p {
+        font-size: 0.95rem;
+      }
+    
+      .hobbies li {
+        font-size: 1.1rem;
+      }
+  }
+  

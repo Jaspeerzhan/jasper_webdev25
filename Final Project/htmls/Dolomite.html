@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dolomites</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/dolomite.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script defer src="../js/common.js"></script>
+</head>
+<body class="dolomites-theme" data-city="dolomite">
+  <nav>
+    <div class="logo">
+        <a href="./index.html">
+            <h1>Jasper <span class="icon">🌍</span></h1>
+            <p>around the world in 2024</p>
+        </a>
+    </div>
+    <div class="nav-bar">
+        <ul>
+            <li class="dropdown">
+                <a href="#">USA</a>
+                <ul class="submenu">
+                    <li><a href="./Hawaii.html">Hawaii</a></li>
+                    <li><a href="./HawaiiGallery.html">Gallery</a></li>
+                </ul>
+            </li>
+              
+            <li class="dropdown">
+                <a href="#">Italy</a>
+                <ul class="submenu">
+                    <li><a href="./Rome.html">Rome</a></li>
+                    <li><a href="./Florence.html">Florence</a></li>
+                    <li><a href="./Dolomite.html">Dolomites</a></li>
+                    <li><a href="./Italygallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#">Soccer</a>
+                <ul class="submenu">
+                    <li><a href="./RedDerby.html">Red Derby</a></li>
+                    <li><a href="./RomeDerby.html">Rome Derby</a></li>
+                </ul>
+            </li>                
+            <li><a href="./Me.html">ME</a></li>
+        </ul>
+    </div>
+</nav>
+
+  <main>
+    <section class="city-header frost">
+      <h1 class="gradient-text">A Winter Tale in the Dolomites</h1>
+      <p class="subtitle">Snowflakes, silence, and sky-touching spires</p>
+      <div id="weather-info" style="font-size: 1.1rem; margin-top: 1rem;"></div>
+    </section>
+
+    <section class="itinerary">
+
+        <!-- Day 1 -->
+        <div class="itinerary-card">
+          <div class="itinerary-img">
+            <img src="../img/Dolomite/ski.jpg" alt="Skiing">
+            <img src="../img/Dolomite/mountain.jpg" alt="Mountain view">
+          </div>
+          <div class="itinerary-text">
+            <h3>Day 1 — Alpe di Siusi & Sunset Spa 🏔️🛁</h3>
+            <p>
+              I began my Dolomites adventure on the snow-covered plains of <strong>Alpe di Siusi</strong>, gliding through crisp alpine air with the <strong>Sassolungo</strong> group in view.
+            </p>
+            <p>
+              As dusk fell, I sank into the outdoor thermal pools of <strong>QC Terme Dolomiti</strong>, steam rising into snowfall — a moment of complete stillness.
+            </p>
+          </div>
+        </div>
+      
+        <!-- Day 2 -->
+        <div class="itinerary-card reverse">
+          <div class="itinerary-img">
+            <img src="../img/Dolomite/church.jpg" alt="San Giovanni Church">
+          </div>
+          <div class="itinerary-text">
+            <h3>Day 2 — San Giovanni Church & Winter Trail ⛪❄️</h3>
+            <p>
+              In Val di Funes, I found the pink-towered <strong>Chiesa di San Giovanni</strong> beneath snow-kissed peaks — peaceful and picture-perfect.
+            </p>
+            <p>
+              I wandered a nearby trail, alone with the wind and the white, photographing mountains dressed in silence.
+            </p>
+          </div>
+        </div>
+      
+      </section>
+      
+
+      <section class="map-section container my-5">
+        <h2 class="text-center mb-4">My Dolomites Journey</h2>
+        <div id="map"></div>
+      </section>
+      <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdhLEqequbhpuo72Ob3-SDrsx7Wcz_-SY&callback=initMap" async defer></script>
+
+  </main>
+
+  <button id="toTopBtn" onclick="scrollToTop()" title="Back to Top">⬆</button>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2024 Jasper's Travels. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      getWeather("Ortisei", 46.57, 11.67, "Europe/Rome");
+    });
+    
+ 
+    function toggleDay(id) {
+        const section = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+        const visible = section.classList.toggle('show');
+        if (icon) icon.textContent = visible ? '–' : '+';
+    }
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".itinerary-card", {
+    scrollTrigger: ".itinerary-card",
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.2
+    });
+
+
+    gsap.from(".city-header", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out"
+    });
+
+
+ 
+    function initMap() {
+  const center = { lat: 46.5, lng: 11.8 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 9,
+    center: center,
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+  });
+
+  const places = [
+    {
+      position: { lat: 46.556, lng: 11.640 },
+      title: "Alpe di Siusi",
+      content: "Skiing, alpine air, and mountain views ⛷️🏔️"
+    },
+    {
+      position: { lat: 46.214, lng: 11.706 },
+      title: "QC Terme Dolomiti",
+      content: "Hot springs with snow falling — unforgettable 🛁❄️"
+    },
+    {
+      position: { lat: 46.638, lng: 11.720 },
+      title: "San Giovanni Church",
+      content: "The most photogenic spot in the snow! 📸⛪"
+    }
+  ];
+
+  places.forEach((place) => {
+    const marker = new google.maps.Marker({
+      position: place.position,
+      map: map,
+      title: place.title,
+      icon: {
+        url: "https://maps.google.com/mapfiles/kml/shapes/snowflake_simple.png",
+        scaledSize: new google.maps.Size(32, 32)
+      }
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: `<div style="font-family: 'Georgia', serif; padding: 6px 5px; background: #f0f8ff; border-radius: 8px;">
+                  <h5 style="margin:0 0 4px; color: #003366;">${place.title}</h5>
+                  <p style="margin:0; color:#333;">${place.content}</p>
+                </div>`
+    });
+
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+  });
+}
+
+  </script>
+</body>
+</html>

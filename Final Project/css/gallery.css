@@ -1,0 +1,84 @@
+
+
+  .city-gallery {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.02);
+  }
+
+  .city-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .city-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #2b3a42;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .city-nav:hover {
+    background: #2b3a42;
+    color: white;
+  }
+
+  .city-prev { left: 24px; }
+  .city-next { right: 24px; }
+  
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .city-nav {
+    display: none; 
+  }
+}

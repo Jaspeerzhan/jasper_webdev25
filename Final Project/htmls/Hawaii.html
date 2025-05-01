@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hawaii Adventure</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="../js/common.js"></script>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/hawaii.css">
+</head>
+
+<body data-city="hawaii">
+
+<section id="introScreen">
+  <h1>Aloha 🌺</h1>
+  <p>Welcome to Hawaii</p>
+  <button id="startBtn">Start Adventure</button>
+</section>
+
+<nav>
+  <div class="logo">
+      <a href="./index.html">
+          <h1>Jasper <span class="icon">🌍</span></h1>
+          <p>around the world in 2024</p>
+      </a>
+  </div>
+  <div class="nav-bar">
+      <ul>
+          <li class="dropdown">
+              <a href="#">USA</a>
+              <ul class="submenu">
+                  <li><a href="./Hawaii.html">Hawaii</a></li>
+                  <li><a href="./HawaiiGallery.html">Gallery</a></li>
+              </ul>
+          </li>
+            
+          <li class="dropdown">
+              <a href="#">Italy</a>
+              <ul class="submenu">
+                  <li><a href="./Rome.html">Rome</a></li>
+                  <li><a href="./Florence.html">Florence</a></li>
+                  <li><a href="./Dolomite.html">Dolomites</a></li>
+                  <li><a href="./Italygallery.html">Gallery</a></li>
+              </ul>
+          </li>
+          
+          <li class="dropdown">
+              <a href="#">Soccer</a>
+              <ul class="submenu">
+                  <li><a href="./RedDerby.html">Red Derby</a></li>
+                  <li><a href="./RomeDerby.html">Rome Derby</a></li>
+              </ul>
+          </li>                
+          <li><a href="./Me.html">ME</a></li>
+      </ul>
+  </div>
+</nav>
+
+<main id="mainContent">
+  <h2>🌴 Explore Hawaii</h2>
+
+  <div id="weather-info"></div>
+
+  <p class="content-paragraph">
+    Your journey begins on the Big Island — a land of raw power and natural wonder.  
+    From the fiery breath of <strong>Hawai'i Volcanoes National Park</strong> to the lush rainforests of Hilo and the black sand beaches of Punalu'u, every moment is a breathtaking discovery.  
+  </p>
+  
+  <section class="itinerary">
+    <div class="day-card">
+      <h3>Day 1 — Kona Arrival & Manta Ray Night Dive</h3>
+      <img src="../img/Hawaii/1.jpg" alt="Manta Ray Night Dive">
+      <p>Arrive in sunny Kona, relax on the beach, and at night embark on an unforgettable manta ray night snorkeling or diving adventure under the stars.</p>
+    </div>
+  
+    <div class="day-card">
+      <h3>Day 2 — Volcanoes National Park Exploration</h3>
+      <img src="../img/Hawaii/2.jpg" alt="Volcanoes National Park">
+      <p>Journey to Hawaii Volcanoes National Park to hike through lava fields, explore Thurston Lava Tube, and witness the awe-inspiring volcanic landscapes.</p>
+    </div>
+  
+    <div class="day-card">
+      <h3>Day 3 — Mauna Kea Summit Adventure</h3>
+      <img src="../img/Hawaii/3.jpg" alt="Mauna Kea Sunset">
+      <p>Spend the day exploring Kona, then drive up Mauna Kea for a sunset above the clouds and unparalleled stargazing at one of the world's premier observatories.</p>
+    </div>
+  </section>
+
+</main>
+<img id="turtle1" src="https://media.giphy.com/media/8H1SPh0ysU9EoXMzVj/giphy.gif" alt="Turtle">
+<footer>
+  <div class="footer-content">
+    <p>© 2024 Jasper's Travels. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    getWeather("Hawaii", 21.3069, -157.8583, "Pacific/Honolulu");
+    moveSingleTurtle('turtle1');
+
+    document.getElementById('startBtn').addEventListener('click', function () {
+      gsap.to("#introScreen", {
+        opacity: 0,
+        duration: 1,
+        onComplete: function () {
+          document.getElementById('introScreen').style.display = 'none';
+          document.getElementById('mainContent').style.display = 'block';
+          gsap.from("#mainContent", { opacity: 0, y: 50, duration: 1 });
+        }
+      });
+    });
+  });
+
+  function moveSingleTurtle(turtleId) {
+    const turtle = document.getElementById(turtleId);
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const turtleWidth = turtle.offsetWidth;
+    const turtleHeight = turtle.offsetHeight;
+    const currentLeft = parseFloat(getComputedStyle(turtle).left) || 0;
+    const currentTop = parseFloat(getComputedStyle(turtle).top) || 0;
+    const maxMove = 400;
+    let deltaX = (Math.random() - 0.5) * 2 * maxMove;
+    let deltaY = (Math.random() - 0.5) * 2 * maxMove;
+    let newLeft = currentLeft + deltaX;
+    let newTop = currentTop + deltaY;
+
+    newLeft = Math.max(0, Math.min(viewportWidth - turtleWidth, newLeft));
+    newTop = Math.max(0, Math.min(viewportHeight - turtleHeight, newTop));
+
+    gsap.to(turtle, {
+      duration: 2,
+      left: newLeft,
+      top: newTop,
+      ease: "power1.inOut",
+      onComplete: () => setTimeout(() => moveSingleTurtle(turtleId), 4000)
+    });
+  }
+</script>
+
+
+</script>
+
+</body>
+</html>
