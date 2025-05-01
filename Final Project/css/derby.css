@@ -132,8 +132,11 @@
 }
 
 .timeline-filter {
-    margin: 20px 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
 
 .timeline-filter button {
